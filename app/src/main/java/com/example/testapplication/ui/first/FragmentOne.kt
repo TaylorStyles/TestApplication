@@ -1,28 +1,24 @@
-package com.example.testapplication.ui.main
+package com.example.testapplication.ui.first
 
-import android.R.attr.data
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.testapplication.R
-import com.example.testapplication.databinding.FragmentMainBinding
+import com.example.testapplication.databinding.FragmentOneBinding
 
 
-class MainFragment : Fragment() {
+class FragmentOne : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = FragmentOne()
     }
 
     private lateinit var viewModel: FragmentOneViewModel
-    private lateinit var binding: FragmentMainBinding
+    private lateinit var binding: FragmentOneBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentMainBinding.inflate(inflater, container, false)
+        binding = FragmentOneBinding.inflate(inflater, container, false)
         viewModel = FragmentOneViewModel()
         binding.viewModel = viewModel
         binding.lifecycleOwner = this

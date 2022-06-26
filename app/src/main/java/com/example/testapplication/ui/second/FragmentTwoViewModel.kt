@@ -1,10 +1,9 @@
-package com.example.testapplication.ui.main
+package com.example.testapplication.ui.second
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class FragmentOneViewModel : ViewModel() {
+class FragmentTwoViewModel : ViewModel() {
 
     val word = MutableLiveData<String>()
 
@@ -15,6 +14,5 @@ class FragmentOneViewModel : ViewModel() {
     fun updateBodyText() {
         word.value = "Fragment Body Text Updated!"
     }
-
 
 }
