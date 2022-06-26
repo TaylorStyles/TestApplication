@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="body_text">default body text</string>
+</resources>
