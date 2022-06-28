@@ -1,10 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
         applicationId "com.example.testapplication"
@@ -37,13 +38,31 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //MARK: navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:${navVersion}")
+    implementation("androidx.navigation:navigation-ui-ktx:${navVersion}")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:${navVersion}")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    androidTestImplementation("androidx.navigation:navigation-testing:${navVersion}")
+    implementation("androidx.navigation:navigation-compose:${navVersion}")
+
+    //MARK: misc
+    implementation("androidx.core:core-ktx:${coreKtx}")
+    implementation("androidx.appcompat:appcompat:${appCompat}")
+    implementation("com.google.android.material:material:${material}")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.38")
+
+    //MARK: layout
+    implementation("androidx.constraintlayout:constraintlayout:${constraintlayout}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${livedataKtx}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${viewmodelKtx}")
+
+    //MARK: test
+    testImplementation("junit:junit:${junit_test}")
+    androidTestImplementation("androidx.test.ext:junit:${junit_androidTest}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${espressoCore_androidTest}")
+
+    //MARK: dagger
+    implementation("com.google.dagger:dagger:${dagger}")
+    kapt("com.google.dagger:dagger-compiler:${dagger}")
 }

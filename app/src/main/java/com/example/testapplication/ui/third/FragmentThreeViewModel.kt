@@ -1,14 +1,14 @@
-package com.example.testapplication.ui.second
+package com.example.testapplication.ui.third
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class FragmentTwoViewModel : ViewModel() {
+class FragmentThreeViewModel : ViewModel() {
 
     val word = MutableLiveData<String>()
 
     init {
-        word.value = "Default Fragment Two Body Text"
+        word.value = "Default Body Text"
     }
 
     fun updateBodyText() {
